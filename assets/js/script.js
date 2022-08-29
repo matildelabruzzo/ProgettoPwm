@@ -1,28 +1,32 @@
 //#region Weather API + geolocation
+currentCity();
 
-async function currentCity() {
+function weatherData(data) {
     const weatherImage = document.querySelector('.weather-image');
     const weatherLocation = document.querySelector('.weather-location');
     const weatherTemperature = document.querySelector('.weather-temperature');
     const suggestionParagraph = document.querySelector('.suggestion');
-    navigator.geolocation.getCurrentPosition(async function (position) {
-        let data = await getCityWeather(position.coords.latitude, position.coords.longitude);
-        const locationName = data.name;
-        const temperature = Math.floor(data.main.temp); // arrotondo per difetto
-        const imageCode = data.weather[0].icon;
-        const description = data.weather[0].description;
 
-        const suggestion = getSuggestion(imageCode);
+    const locationName = data.name;
+    const temperature = Math.floor(data.main.temp); // arrotondo per difetto
+    const imageCode = data.weather[0].icon;
+    const description = data.weather[0].description;
 
-        weatherLocation.innerText = locationName;
-        weatherTemperature.innerText = temperature + '°';
-        weatherImage.alt = description;
-        weatherImage.src = `images/${imageCode}.jpg`;
-        suggestionParagraph.innerText = suggestion;
-    });
+    const suggestion = getSuggestion(imageCode);
+
+    weatherLocation.innerText = locationName;
+    weatherTemperature.innerText = temperature + '°';
+    weatherImage.alt = description;
+    weatherImage.src = `images/${imageCode}.jpg`;
+    suggestionParagraph.innerText = suggestion;
 }
 
-currentCity();
+async function currentCity() {
+    navigator.geolocation.getCurrentPosition(async function (position) {
+        let data = await getCityWeather(position.coords.latitude, position.coords.longitude);
+        weatherData(await data);
+    });
+}
 
 function getSuggestion(imageCode) {
     const suggestions = {
@@ -64,6 +68,34 @@ var swiper = new Swiper(".mySwiper", {
 //#endregion
 
 //#region ricerca
+document.getElementById("search-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    let options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '529ab92a76msh4a5699d05e5fcbdp18aec3jsn0182800d0d4d',
+            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+        }
+    };
+
+    let testo = document.getElementById("search-bar").value;
+    setTimeout(async function () {
+        if (testo == document.getElementById("search-bar").value) {
+            let result = await fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=' + document.getElementById("search-bar").value, options);
+            result = await result.json();
+            result.data.forEach(async function (el) {
+                if (el.city.toLowerCase() == testo.toLowerCase()) {
+                    let coord = await getCityCoord(testo.toLowerCase());
+                    let data = await getCityWeather(coord.lat, coord.lon);
+                    weatherData(await data);
+                }
+            });
+        }
+    }, 1000);
+});
+
+
+/*
 document.getElementById("search-bar").addEventListener("keyup", async function (e) {
     e.preventDefault();
     let options = {
@@ -83,63 +115,6 @@ document.getElementById("search-bar").addEventListener("keyup", async function (
         }
     }, 1000);
 });
+*/
 
 //#endregion
-
-// Prova
-/*
-let weather = {
-    apiKey: "62b2896b7ea5c96b920fdfb088348f9b",
-    fetchWeather: function (city) {
-        fetch(
-            "https://api.openweathermap.org/data/2.5/weather?q=" +
-            city +
-            "&units=metric&appid=" +
-            this.apiKey
-        )
-            .then((response) => {
-                if (!response.ok) {
-                    alert("No weather found.");
-                    throw new Error("No weather found.");
-                }
-                return response.json();
-            })
-            .then((data) => this.displayWeather(data));
-    },
-    displayWeather: function (data) {
-        const { name } = data;
-        const { icon, description } = data.weather[0];
-        const { temp, humidity } = data.main;
-        const { speed } = data.wind;
-        document.querySelector(".weather-location").innerText = name;
-        document.querySelector(".icon").src =
-            "https://openweathermap.org/img/wn/" + icon + ".png";
-        document.querySelector(".weather-condition").innerText = description;
-        document.querySelector(".weather-temperature").innerText = temp + "°C";
-        document.querySelector(".humidity").innerText =
-            "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText =
-            "Wind speed: " + speed + " km/h";
-        document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage =
-            "url('https://source.unsplash.com/1600x900/?" + name + "')";
-    },
-    search: function () {
-        this.fetchWeather(document.querySelector(".search-bar").value);
-    },
-};
-
-document.querySelector(".search-button").addEventListener("click", function () {
-    weather.search();
-});
-
-document
-    .querySelector(".search-bar")
-    .addEventListener("keyup", function (event) {
-        if (event.key == "Enter") {
-            weather.search();
-        }
-    });
-
-weather.fetchWeather("Denver");
-*/
