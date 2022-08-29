@@ -1,47 +1,28 @@
 //#region Weather API + geolocation
-const weatherImage = document.querySelector('.weather-image');
-const weatherLocation = document.querySelector('.weather-location');
-const weatherTemperature = document.querySelector('.weather-temperature');
-const suggestionParagraph = document.querySelector('.suggestion');
 
-window.navigator.geolocation.getCurrentPosition(onSuccess, onError);
+async function currentCity() {
+    const weatherImage = document.querySelector('.weather-image');
+    const weatherLocation = document.querySelector('.weather-location');
+    const weatherTemperature = document.querySelector('.weather-temperature');
+    const suggestionParagraph = document.querySelector('.suggestion');
+    navigator.geolocation.getCurrentPosition(async function (position) {
+        let data = await getCityWeather(position.coords.latitude, position.coords.longitude);
+        const locationName = data.name;
+        const temperature = Math.floor(data.main.temp); // arrotondo per difetto
+        const imageCode = data.weather[0].icon;
+        const description = data.weather[0].description;
 
-function onError(error) {
-    console.error(error);
-    weatherLocation.innerText = 'Attiva la geolocalizzazione';
+        const suggestion = getSuggestion(imageCode);
+
+        weatherLocation.innerText = locationName;
+        weatherTemperature.innerText = temperature + '°';
+        weatherImage.alt = description;
+        weatherImage.src = `images/${imageCode}.jpg`;
+        suggestionParagraph.innerText = suggestion;
+    });
 }
 
-function onSuccess(position) {
-
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    const apiKey = '62b2896b7ea5c96b920fdfb088348f9b';
-    const language = 'it';
-    const units = 'metric';
-    const endpoint = 'https://api.openweathermap.org/data/2.5/weather';
-
-    const apiUri = `${endpoint}?lon=${longitude}&lat=${latitude}&units=${units}&lang=${language}&appid=${apiKey}`; //query string
-
-    fetch(apiUri).then(function (response) {
-        const data = response.json();
-        return data;
-    })
-        .then(function (data) {
-
-            const locationName = data.name;
-            const temperature = Math.floor(data.main.temp); // arrotondo per difetto
-            const imageCode = data.weather[0].icon;
-            const description = data.weather[0].description;
-
-            const suggestion = getSuggestion(imageCode);
-
-            weatherLocation.innerText = locationName;
-            weatherTemperature.innerText = temperature + '°';
-            weatherImage.alt = description;
-            weatherImage.src = `images/${imageCode}.jpg`;
-            suggestionParagraph.innerText = suggestion;
-        });
-}
+currentCity();
 
 function getSuggestion(imageCode) {
     const suggestions = {
