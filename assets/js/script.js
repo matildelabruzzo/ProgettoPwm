@@ -81,7 +81,7 @@ document.getElementById("search-form").addEventListener("submit", async function
     let testo = document.getElementById("search-bar").value;
     setTimeout(async function () {
         if (testo == document.getElementById("search-bar").value) {
-            let result = await fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=' + document.getElementById("search-bar").value, options);
+            let result = await fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?languageCode=it&namePrefix=' + document.getElementById("search-bar").value, options);
             result = await result.json();
             result.data.forEach(async function (el) {
                 if (el.city.toLowerCase() == testo.toLowerCase()) {

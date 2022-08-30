@@ -66,24 +66,47 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Info</a>
                             </li>
-                            <!-- Toggle dark mode-->
-                            <li class="nav-item">
-                                <div class="nav-link">
-                                    <div class="toggle">
-                                        <input type="checkbox" id="darkModeToggle">
-                                        <label for="darkModeToggle"></label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="container-fluid">
-                                    <a class="navbar-brand" href="#">
-                                        <img src="images/cloud-sun-solid.svg" alt="logo"
-                                            class="d-inline-block align-text-top">
-                                        Meteo
+                            <% if(!autentication){%>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Autenticazione
                                     </a>
-                                </div>
-                            </li>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="/login">Login</a></li>
+                                        <li><a class="dropdown-item" href="/registrazione">Registrazione</a></li>
+                                    </ul>
+                                </li>
+                                <%} else{%>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <%= user%>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="/areaPersonale">Area Personale</a></li>
+                                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    <%}%>
+                                        <!-- Toggle dark mode-->
+                                        <li class="nav-item">
+                                            <div class="nav-link">
+                                                <div class="toggle">
+                                                    <input type="checkbox" id="darkModeToggle">
+                                                    <label for="darkModeToggle"></label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="container-fluid">
+                                                <a class="navbar-brand" href="#">
+                                                    <img src="images/cloud-sun-solid.svg" alt="logo"
+                                                        class="d-inline-block align-text-top">
+                                                    Meteo
+                                                </a>
+                                            </div>
+                                        </li>
                         </ul>
 
                         <!-- Ricerca -->
@@ -374,9 +397,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- Javascript -->
+    <script src="js/meteo.js"></script>
     <script src="js/script.js"></script>
     <script src="js/darkMode.js"></script>
-    <script src="js/meteo.js"></script>
 </body>
 
 </html>
