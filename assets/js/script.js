@@ -67,7 +67,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 //#endregion
 
-//#region ricerca
+//#region ricerca città
 document.getElementById("search-form").addEventListener("submit", async function (e) {
     e.preventDefault();
     let options = {
