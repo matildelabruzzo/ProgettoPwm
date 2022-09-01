@@ -17,7 +17,6 @@ const mc = new MongoClient(process.env.DB_URL);
 const expireTime = 30 * 60 * 1000;
 const collectionName = process.env.COLLECTION_NAME;
 const app = express();
-let city = [];
 const apiCity = process.env.APICITY_KEY;
 //#endregion
 
@@ -59,6 +58,7 @@ app.get("/", (req, res) => {
         res.render("index", { autentication: false });
 });
 
+//#region login
 app.get("/login", (req, res) => {
     let auth = req.query.auth ? true : false;
 
@@ -121,9 +121,130 @@ app.post("/creaUtente", (req, res) => {
         res.json({ result: "err" });
 });
 
+app.get("/areaPersonale", (req, res) => {
+
+    let userName = req.cookies.login;
+
+    if (userName === undefined)
+        res.redirect("/");
+
+    mc.connect(function (err, db) {
+        if (err) throw err;
+        let dbo = db.db(DBName);
+        let query = { user: userName };
+        dbo.collection(collectionName).findOne(query, (err, result) => {
+            if (err) throw err;
+            res.render("login/areaPersonale", { email: result.email, user: result.user, pref: result.pref });
+            db.close();
+        });
+
+    });
+});
+
+app.post("/aggiornaDati", (req, res) => {
+
+    let utente = req.cookies.login;
+    let nuoviDati;
+
+
+    if (utente === undefined)
+        res.redirect("/");
+
+    if (req.body.pw !== undefined)
+        nuoviDati = { pw: req.body.pw };
+    else if (req.body.mail !== undefined)
+        nuoviDati = { email: req.body.mail };
+    else {
+        nuoviDati = { user: req.body.user };
+    }
+
+    mc.connect(function (err, db) {
+        if (err) throw err;
+        let dbo = db.db(DBName);
+        let query = { user: utente };
+        let aggiorna = { $set: nuoviDati };
+        dbo.collection(collectionName).updateOne(query, aggiorna, (err, result) => {
+
+            if (err)
+                res.json({ result: "err" });
+            else {
+                if (req.body.user !== undefined) {
+                    res.clearCookie("login")
+                    res.cookie("login", req.body.user, {
+                        maxAge: expireTime,
+                        httpOnly: true
+                    });
+                }
+                res.json({ result: "ok" });
+            }
+            db.close();
+        });
+
+    });
+});
+
+app.post("/aggiungiCit", async (req, res) => {
+    let utente = req.cookies.login;
+    let comune = req.body.pref.toLowerCase();
+    let options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '529ab92a76msh4a5699d05e5fcbdp18aec3jsn0182800d0d4d',
+            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+        }
+    };
+
+    if (utente === undefined)
+        res.redirect("/");
+
+    let result = await axios('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?languageCode=it&namePrefix=' + comune, options);
+
+    if (await result !== undefined)
+        mc.connect(function (err, db) {
+            if (err) throw err;
+            let dbo = db.db(DBName);
+            let query = { user: utente };
+            let aggiorna = { $push: { pref: comune } };
+            dbo.collection(collectionName).updateOne(query, aggiorna, (err, result) => {
+                if (err)
+                    res.json({ result: "err" });
+                else
+                    res.json({ result: "ok" });
+                db.close();
+            });
+
+        });
+    else
+        res.json({ result: "err" });
+});
+
+app.put("/rimuoviCit", (req, res) => {
+    let utente = req.cookies.login;
+
+    if (utente === undefined)
+        res.redirect("/");
+
+
+    mc.connect(function (err, db) {
+        if (err) throw err;
+        let dbo = db.db(DBName);
+        let query = { user: utente };
+        let aggiorna = { $pull: { pref: req.body.pref } };
+        dbo.collection(collectionName).updateOne(query, aggiorna, (err, result) => {
+            if (err)
+                res.json({ result: "err" });
+            else
+                res.json({ result: "ok" });
+            db.close();
+        });
+
+    });
+});
+
 app.get("/logout", (req, res) => {
     res.clearCookie("login").redirect("/");
 });
+//#endregion
 //#endregion
 
 //#region
