@@ -111,8 +111,12 @@
 
                         <!-- Ricerca -->
                         <form class="d-flex search" role="search" id="search-form">
-                            <input class="form-control me-2" type="search" id="search-bar"
-                                placeholder="Inserisci una città..." aria-label="Search">
+                            <input class="form-control" list="datalistOptions" id="search-bar"
+                                placeholder="Inserisci una città...">
+                            <datalist id="datalistOptions">
+                            </datalist>
+                            <!-- <input class="form-control me-2" type="search" id="search-bar"
+                                placeholder="Inserisci una città..." aria-label="Search"> -->
                             <button class="btn btn-outline-success search-button" type="submit">Cerca</button>
                         </form>
                     </div>

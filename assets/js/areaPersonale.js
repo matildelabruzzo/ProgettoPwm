@@ -83,10 +83,12 @@ document.getElementById("prefForm").addEventListener('submit', async (e) => {
 
     div.appendChild(p);
     document.getElementById("containerPref").appendChild(div);
+
+    aggiungiRimozione();
 });
 
-if (document.getElementsByClassName("rimuovi").length != 0) {
-    let bottoni = document.getElementsByClassName("rimuovi")
+function aggiungiRimozione() {
+    let bottoni = document.getElementsByClassName("rimuovi");
     Array.prototype.forEach.call(bottoni, element => {
         element.addEventListener("click", async (e) => {
             let i = 3;
@@ -111,6 +113,10 @@ if (document.getElementsByClassName("rimuovi").length != 0) {
             }
         });
     });
+}
+
+if (document.getElementsByClassName("rimuovi").length != 0) {
+    aggiungiRimozione();
 }
 
 async function inviaNuoviDati(bodyReq, nomeResponse, nomeContainer, textOnSucc, textOnFail, nomeP = null, textP) {

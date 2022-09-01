@@ -186,35 +186,48 @@ app.post("/aggiornaDati", (req, res) => {
 app.post("/aggiungiCit", async (req, res) => {
     let utente = req.cookies.login;
     let comune = req.body.pref.toLowerCase();
-    let options = {
+    const options = {
         method: 'GET',
+        url: 'https://spott.p.rapidapi.com/places/autocomplete',
+        params: { limit: '10', skip: '0', language: ' it', q: comune, type: 'CITY' },
         headers: {
             'X-RapidAPI-Key': '529ab92a76msh4a5699d05e5fcbdp18aec3jsn0182800d0d4d',
-            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+            'X-RapidAPI-Host': 'spott.p.rapidapi.com'
         }
     };
+
 
     if (utente === undefined)
         res.redirect("/");
 
-    let result = await axios('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?languageCode=it&namePrefix=' + comune, options);
+    let result = await axios.request(options);
 
-    if (await result !== undefined)
-        mc.connect(function (err, db) {
-            if (err) throw err;
-            let dbo = db.db(DBName);
-            let query = { user: utente };
-            let aggiorna = { $push: { pref: comune } };
-            dbo.collection(collectionName).updateOne(query, aggiorna, (err, result) => {
-                if (err)
-                    res.json({ result: "err" });
-                else
-                    res.json({ result: "ok" });
-                db.close();
-            });
+    let citEsistente = false;
 
-        });
-    else
+
+    for (el of await result.data) {
+        if (typeof el.localizedName == "string")
+            if (el.localizedName.toLowerCase() == comune) {
+
+                citEsistente = true;
+                mc.connect(function (err, db) {
+                    if (err) throw err;
+                    let dbo = db.db(DBName);
+                    let query = { user: utente };
+                    let aggiorna = { $push: { pref: comune } };
+                    dbo.collection(collectionName).updateOne(query, aggiorna, (err, result) => {
+                        if (err)
+                            res.json({ result: "err" });
+                        else
+                            res.json({ result: "ok" });
+                        db.close();
+                    });
+
+                });
+            }
+    }
+
+    if (!citEsistente)
         res.json({ result: "err" });
 });
 

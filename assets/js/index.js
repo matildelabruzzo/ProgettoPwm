@@ -1,6 +1,7 @@
 //#region Weather API + geolocation
 currentCity();
 
+
 function weatherData(data) {
     const weatherImage = document.querySelector('.weather-image');
     const weatherLocation = document.querySelector('.weather-location');
@@ -70,51 +71,61 @@ var swiper = new Swiper(".mySwiper", {
 //#region ricerca città
 document.getElementById("search-form").addEventListener("submit", async function (e) {
     e.preventDefault();
-    let options = {
+    const options = {
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': '529ab92a76msh4a5699d05e5fcbdp18aec3jsn0182800d0d4d',
-            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+            'X-RapidAPI-Host': 'spott.p.rapidapi.com'
         }
     };
 
     let testo = document.getElementById("search-bar").value;
-    setTimeout(async function () {
-        if (testo == document.getElementById("search-bar").value) {
-            let result = await fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?languageCode=it&namePrefix=' + document.getElementById("search-bar").value, options);
-            result = await result.json();
-            result.data.forEach(async function (el) {
-                if (el.city.toLowerCase() == testo.toLowerCase()) {
-                    let coord = await getCityCoord(testo.toLowerCase());
-                    let data = await getCityWeather(coord.lat, coord.lon);
-                    weatherData(await data);
-                }
-            });
+
+
+    let result = await fetch('https://spott.p.rapidapi.com/places/autocomplete?language=%20it&limit=10&skip=0&type=CITY&q=' + document.getElementById("search-bar").value, options);
+    result = await result.json();
+
+    result.forEach(async function (el) {
+        if (el.localizedName.toLowerCase() == testo.toLowerCase()) {
+            let coord = await getCityCoord(testo.toLowerCase());
+            let data = await getCityWeather(coord.lat, coord.lon);
+            weatherData(await data);
         }
-    }, 1000);
+    });
+
 });
 
 
-/*
 document.getElementById("search-bar").addEventListener("keyup", async function (e) {
     e.preventDefault();
-    let options = {
+    const options = {
         method: 'GET',
         headers: {
             'X-RapidAPI-Key': '529ab92a76msh4a5699d05e5fcbdp18aec3jsn0182800d0d4d',
-            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+            'X-RapidAPI-Host': 'spott.p.rapidapi.com'
         }
     };
 
-    let testo = document.getElementById("search-bar").value;
-    setTimeout(async function () {
-        if (testo == document.getElementById("search-bar").value) {
-            let result = await fetch('https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=' + document.getElementById("search-bar").value, options);
-            result = await result.json();
-            document.getElementById("ricerca-incrementale").innerText = result.data[0].city;
-        }
-    }, 1000);
+    let dataList;
+
+    let result = await fetch('https://spott.p.rapidapi.com/places/autocomplete?language=%20it&limit=10&skip=0&type=CITY&q=' + document.getElementById("search-bar").value, options);
+    result = await result.json();
+
+
+
+
+    while (document.getElementById("datalistOptions").hasChildNodes()) {
+        document.getElementById("datalistOptions").removeChild(document.getElementById("datalistOptions").firstChild);
+    }
+
+
+    result.forEach((el) => {
+        dataList = document.createElement("option");
+        dataList.setAttribute("value", el.localizedName.toLowerCase());
+        document.getElementById("datalistOptions").appendChild(dataList);
+    });
+
 });
-*/
+
 
 //#endregion
