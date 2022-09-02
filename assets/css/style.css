@@ -13,30 +13,17 @@ html {
     overflow-x: hidden;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 16px;
-}
-
 /*#endregion*/
 
 /*#region Navbar */
-.navbar-brand {
-    text-align: center;
-    position: relative;
-    left: 180px;
-    top: 7px;
-    font-weight: bold;
-}
-
-.bootstrap a {
-    color: #555;
-}
 
 .navbar-brand img {
     width: 30px;
     height: 24px;
+}
+
+.bootstrap a {
+    color: #555;
 }
 
 /*#endregion */
@@ -189,12 +176,14 @@ html {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    text-shadow: 2px 2px #000;
 }
 
-.slide-info p {
+.slide-info li {
     font-size: 18px;
     margin-left: 15px;
     color: #fff;
+    text-shadow: 2px 2px #000;
 }
 
 /*#endregion*/

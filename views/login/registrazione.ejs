@@ -26,11 +26,9 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/toggle-bootstrap-print.min.css" />
 
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <title>Meteo</title>
 </head>
@@ -38,14 +36,22 @@
 <body class="bootstrap">
 
     <header>
-        <!-- Navbar -->
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar bg-light sticky-top" id="topNavBar">
+            <nav class="navbar navbar-expand-lg navbar bg-light fixed-top" id="topNavBar">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <div class="container-fluid">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="images/cloud-sun-solid.svg" alt="logo"
+                                            class="d-inline-block align-text-top">
+                                        Meteo
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <!-- Toggle dark mode-->
                             <li class="nav-item">
@@ -56,23 +62,15 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <div class="container-fluid">
-                                    <a class="navbar-brand" href="#">
-                                        <img src="images/cloud-sun-solid.svg" alt="logo"
-                                            class="d-inline-block align-text-top">
-                                        Meteo
-                                    </a>
-                                </div>
-                            </li>
                         </ul>
+
                     </div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <div class="container text-center mt-3">
+    <div class="container text-center marginTop">
         <div class="text-center">
             <p class="h3 mb-3">Registrazione</p>
         </div>

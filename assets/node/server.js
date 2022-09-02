@@ -48,14 +48,14 @@ app.get("/", (req, res) => {
             let query = { user: req.cookies.login };
             dbo.collection(collectionName).findOne(query, (err, result) => {
                 if (err) throw err;
-                res.render("index", { autentication: true, user: result.user });
+                res.render("index", { autentication: true, user: result.user, pref: result.pref });
                 db.close();
             });
 
         });
     }
     else
-        res.render("index", { autentication: false });
+        res.render("index", { autentication: false, pref: undefined });
 });
 
 //#region login

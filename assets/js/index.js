@@ -1,5 +1,24 @@
 //#region Weather API + geolocation
+const tokenImg = "563492ad6f91700001000001d9738e02bbc548bf973a634e989e643b"; //pexels
+
 currentCity();
+citPreferite();
+
+async function citPreferite() {
+    if (document.getElementsByClassName("swiper-slide").length != 0) {
+
+        for (let i = 0; i < document.getElementsByClassName("swiper-slide").length; i++) {
+            let { lat, lon } = await getCityCoord(document.getElementById("cit" + i).innerText);
+            let weather = await getCityWeather(lat, lon);
+            getImg(document.getElementById("cit" + i).innerText, "imgSlider" + i, Math.floor(Math.random() * 15));
+            document.getElementById("cit" + i + "Temp").innerText = "temperatura: " + weather.main.temp + "°";
+            document.getElementById("cit" + i + "TempPerc").innerText = "temperatura percepita: " + weather.main.feels_like + "°";
+            document.getElementById("cit" + i + "Humid").innerText = "umidità: " + weather.main.humidity + "%";
+            document.getElementById("cit" + i + "Weather").innerText = "tempo: " + weather.weather[0].description;
+
+        }
+    }
+}
 
 
 function weatherData(data) {
@@ -54,11 +73,19 @@ function getSuggestion(imageCode) {
     return suggestions[imageCode];
 }
 
+async function getImg(subject, id, index) {
+
+    let resp = await fetch("https://api.pexels.com/v1/search?locale=it-IT&query=" + subject, { method: "GET", headers: { Authorization: tokenImg } });
+    let json = await resp.json();
+
+    document.getElementById(id).src = await json.photos[index].src.portrait;
+}
+
 //#endregion
 
 //#region Swiper
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
+    slidesPerView: 3,
     spaceBetween: 30,
     freeMode: true,
     pagination: {

@@ -40,10 +40,19 @@
     <header>
         <!-- Navbar -->
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar bg-light sticky-top" id="topNavBar">
+            <nav class="navbar navbar-expand-lg navbar bg-light fixed-top" id="topNavBar">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <div class="container-fluid">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="images/cloud-sun-solid.svg" alt="logo"
+                                            class="d-inline-block align-text-top">
+                                        Meteo
+                                    </a>
+                                </div>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
@@ -62,9 +71,6 @@
                                     </li>
                                     <li><a class="dropdown-item" href="#">Altro</a></li>
                                 </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Info</a>
                             </li>
                             <% if(!autentication){%>
                                 <li class="nav-item dropdown">
@@ -96,15 +102,6 @@
                                                     <input type="checkbox" id="darkModeToggle">
                                                     <label for="darkModeToggle"></label>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <div class="container-fluid">
-                                                <a class="navbar-brand" href="#">
-                                                    <img src="images/cloud-sun-solid.svg" alt="logo"
-                                                        class="d-inline-block align-text-top">
-                                                    Meteo
-                                                </a>
                                             </div>
                                         </li>
                         </ul>
@@ -206,57 +203,39 @@
 
         <!-- Section 2 -->
         <section class="section-2">
-            <div class="container text-left">
-                <h5>Testo</h5>
-                <h4>In evidenza</h4>
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="images/new-york.jpg">
-                            <div class="slide-info">
-                                <h3>New York</h3>
-                                <p>Testo</p>
-                            </div>
+            <% if(pref !==undefined) {%>
+                <div class="container text-left">
+                    <h4>Città preferite</h4>
+                    <div class="swiper mySwiper">
+
+                        <div class="swiper-wrapper">
+                            <% for(let i=0; i < pref.length; i++){%>
+                                <div class="swiper-slide">
+                                    <img id="imgSlider<%= i%>">
+                                    <div class="slide-info">
+                                        <h3 id="cit<%= i%>">
+                                            <%= pref[i]%>
+                                        </h3>
+                                        <ul class="list-unstyled">
+                                            <li id="cit<%= i%>Temp"></li>
+                                            <li id="cit<%= i%>TempPerc"></li>
+                                            <li id="cit<%= i%>Humid"></li>
+                                            <li id="cit<%= i%>Weather"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <%}%>
                         </div>
-                        <div class="swiper-slide">
-                            <img src="images/paris.jpg">
-                            <div class="slide-info">
-                                <h3>Parigi</h3>
-                                <p>Testo</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/barcellona.jpg">
-                            <div class="slide-info">
-                                <h3>Barcellona</h3>
-                                <p>Testo</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/londra.jpg">
-                            <div class="slide-info">
-                                <h3>Londra</h3>
-                                <p>Testo</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/praga.jpg">
-                            <div class="slide-info">
-                                <h3>Praga</h3>
-                                <p>Testo</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="images/dubai.jpg">
-                            <div class="slide-info">
-                                <h3>Dubai</h3>
-                                <p>Testo</p>
-                            </div>
-                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
-            </div>
+                <%}else{%>
+                    <div class="container">
+
+                        <p class="h4">Accedi e inserisci delle città tra
+                            i preferiti nell'area personale per mostrare dati in tempo reale qui!</p>
+                    </div>
+                    <%}%>
         </section>
 
         <hr class="section-divider">
@@ -404,6 +383,8 @@
     <script src="js/meteo.js"></script>
     <script src="js/index.js"></script>
     <script src="js/darkMode.js"></script>
+
+
 </body>
 
 </html>
