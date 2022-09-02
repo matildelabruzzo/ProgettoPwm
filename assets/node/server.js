@@ -258,6 +258,24 @@ app.get("/logout", (req, res) => {
     res.clearCookie("login").redirect("/");
 });
 //#endregion
+
+app.get("/aree", async (req, res) => {
+
+    let capitali = [];
+    let result = await axios("https://restcountries.com/v3.1/region/" + req.query.nomeArea);
+
+
+    for (stato of await result.data) {
+        capitali.push(stato.name.common + ": " + stato.capital[0]);
+    }
+
+    if (req.cookies.login !== undefined) {
+        res.render("aree/area", { autentication: true, user: req.cookies.login, nomeArea: req.query.nomeArea, capitali: capitali });
+    }
+    else
+        res.render("aree/area", { autentication: false, nomeArea: req.query.nomeArea, capitali: capitali });
+});
+
 //#endregion
 
 //#region

@@ -1,5 +1,4 @@
 //#region Weather API + geolocation
-const tokenImg = "563492ad6f91700001000001d9738e02bbc548bf973a634e989e643b"; //pexels
 
 currentCity();
 citPreferite();
@@ -73,13 +72,6 @@ function getSuggestion(imageCode) {
     return suggestions[imageCode];
 }
 
-async function getImg(subject, id, index) {
-
-    let resp = await fetch("https://api.pexels.com/v1/search?locale=it-IT&query=" + subject, { method: "GET", headers: { Authorization: tokenImg } });
-    let json = await resp.json();
-
-    document.getElementById(id).src = await json.photos[index].src.portrait;
-}
 
 //#endregion
 
