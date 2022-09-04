@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.4)  4 SEP 2022 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.4)  4 SEP 2022 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -356,15 +356,15 @@ l.70 \include{capitoli/introduzione.tex}
 
  (capitoli/introduzione.tex
 Capitolo 1.
-) [2
+[2
 
 
-]
+]) [3]
 \openout2 = `capitoli/interfacce.aux'.
 
  (capitoli/interfacce.tex
 Capitolo 2.
-) [3
+) [4
 
 
 
@@ -374,7 +374,7 @@ Capitolo 2.
 
  (capitoli/architettura.tex
 Capitolo 3.
-) [4
+) [5
 
 
 
@@ -384,7 +384,7 @@ Capitolo 3.
 
  (capitoli/codice.tex
 Capitolo 4.
-) [5
+) [6
 
 
 
@@ -394,7 +394,7 @@ Capitolo 4.
 
  (capitoli/sviluppi.tex
 Capitolo 5.
-) [6
+) [7
 
 
 
@@ -404,7 +404,7 @@ Capitolo 5.
 
  (capitoli/bibliografia.tex
 Capitolo 6.
-) [7
+) [8
 
 
 
@@ -414,17 +414,17 @@ Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: 99F6E34D2603FACE80F6DEDC52096AD1;1394.
  ) 
 Here is how much of TeX's memory you used:
- 11982 strings out of 477843
- 195894 string characters out of 2823600
- 517172 words of memory out of 3000000
- 30712 multiletter control sequences out of 15000+600000
- 475061 words of font info for 47 fonts, out of 8000000 for 9000
+ 11991 strings out of 477843
+ 195980 string characters out of 2823600
+ 521172 words of memory out of 3000000
+ 30719 multiletter control sequences out of 15000+600000
+ 475407 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,77p,367b,461s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\matil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on relazione.pdf (8 pages, 92580 bytes).
+ 72i,6n,77p,399b,510s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\matil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on relazione.pdf (9 pages, 118687 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 154 PDF objects out of 1000 (max. 8388607)
+ 22 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
