@@ -32,8 +32,8 @@ async function capitali() {
     for (let i = 0; i < document.getElementsByClassName("swiper-slide").length; i++) {
         let { lat, lon } = await getCityCoord(document.getElementById("cit" + i).innerText.split(":")[1].trim());
         let weather = await getCityWeather(lat, lon);
-        //getImg(document.getElementById("cit" + i).innerText, "imgSlider" + i, Math.floor(Math.random() * 15));
-        document.getElementById("imgSlider" + i).src = "/images/barcellona.jpg";
+        getImg(document.getElementById("cit" + i).innerText, "imgSlider" + i, Math.floor(Math.random() * 15));
+        //document.getElementById("imgSlider" + i).src = "/images/barcellona.jpg";
         document.getElementById("cit" + i + "Temp").innerText = "temperatura: " + weather.main.temp + "°";
         document.getElementById("cit" + i + "TempPerc").innerText = "temperatura percepita: " + weather.main.feels_like + "°";
         document.getElementById("cit" + i + "Humid").innerText = "umidità: " + weather.main.humidity + "%";
