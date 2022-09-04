@@ -114,10 +114,6 @@ html {
     right: 100px;
 }
 
-.weather-suggestion h4 {
-    font-size: 18px;
-}
-
 .suggestion {
     font-size: 20px;
     font-weight: bold;
@@ -204,11 +200,16 @@ html {
 
 .quoteBox {
     padding: 20px;
-    font-size: 90%;
+    font-size: 100%;
 }
 
 .quoteBox img {
     width: 15%;
+}
+
+.quoteBox .content,
+.details {
+    color: black;
 }
 
 /*#endregion*/

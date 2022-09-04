@@ -77,7 +77,7 @@ function getSuggestion(imageCode) {
 
 //#region Swiper
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
+    slidesPerView: 4,
     spaceBetween: 30,
     freeMode: true,
     pagination: {
@@ -92,10 +92,6 @@ var swiper = new Swiper(".swiperQuotes", {
     centeredSlides: true,
     slidesPerView: "auto",
     coverflowEffect: {
-        /*rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,*/
         rotate: 0,
         stretch: 0,
         depth: 100,
