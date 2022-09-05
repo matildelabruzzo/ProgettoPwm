@@ -266,7 +266,8 @@ app.get("/aree", async (req, res) => {
 
 
     for (stato of await result.data) {
-        capitali.push(stato.name.common + ": " + stato.capital[0]);
+        if (stato.name.common !== "Macau")
+            capitali.push(stato.name.common + ": " + stato.capital[0]);
     }
 
     if (req.cookies.login !== undefined) {

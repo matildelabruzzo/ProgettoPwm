@@ -21,5 +21,7 @@ async function getImg(subject, id, index) {
     let resp = await fetch("https://api.pexels.com/v1/search?locale=it-IT&query=" + subject, { method: "GET", headers: { Authorization: tokenImg } });
     let json = await resp.json();
 
-    document.getElementById(id).src = await json.photos[index].src.portrait;
+    if (await json.photos !== undefined && await json.photos[index] !== undefined)
+        document.getElementById(id).src = await json.photos[index].src.portrait;
+    else document.getElementById(id).src = "../images/default.jpg";
 }
