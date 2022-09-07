@@ -25,7 +25,43 @@ possibilità di salvare le città preferite.
 
 \subsection{Modello di valore}
 
+L'applicazione si contraddistingue per essere intuitiva e veloce da usare, elementi sempre graditi durante l'esperienza utente.
+
+\vspace{5mm}
+
+Grazie alla disponibilità in tempo reale di informazioni relative al tempo, quest'applicazione potrebbe essere integrata con
+un'API in grado di fornire informazioni a sistemi automatici usati per svolgere operazioni in base al tempo atmosferico,
+risparmiando così ingenti somme di denaro in sensori e cablaggi.\\
+Benché attualmente non presenti, sarebbe facile inserire banner pubblicitari o sponsor di sorta grazie alla struttura modulare
+del progetto.\\
+Entrambi questi elementi accrescerebbero notevolmente il valore economico dell'applicazione in dipendenza, rispettivamente, al
+numero di sistemi automatici collegabili per utente o al numero di banner inseriti, motivo per cui risulta difficile formulare
+una stima esatta di valore economico.
+
 \subsection{Flusso dei dati}
+
+Il flusso dei dati all'interno dell'applicazione é unicamente in formato JSON: lo scambio di dati tra client e server, tra
+client e API o tra server e API é infatti interamente gestito attraverso l'inoltro di oggetti e stringhe JSON.\\
+Grazie ad una struttura RESTful, le comunicazioni saranno unicamente aperte dal client nel momento in cui necessiterà di una risorsa
+(come il meteo relativo ad una città oppure un'altra pagina del sito), il quale richiederà ciò di cui necessita tramite
+oggetti JSON inviati al server, ricevendone altri in risposta che permetteranno di agiornare un frammento della pagina o di effettuare
+il reindirizzamento.
+
+\vspace{5mm}
+
+I contenuti salvati sono interamente archiviati lato server tramite l'uso di un database MongoDB ad eccezione della preferenza
+espressa dall'utente per cambiare la pagina in dark mode oppure in light mode, la quale è salvata localmente attraverso
+localStorage.
+
+\vspace{5mm}
+
+Allo stato attuale, il progetto prevede solo costi per la manutenzione in up del server, senza che siano necessari particolari
+interventi di manutenzione periodici.
+
+\vspace{5mm}
+
+Il progetto utilizza unicamente librerie e API reperibili gratuitamente, ma sarebbe perfettamente possibile modificarle ed
+adottarne di closed source a pagamento con pochi e semplici aggiustamenti grazie ad una gestione modulare del codice.
 
 \subsection{Aspetti tecnologici}
 
@@ -47,7 +83,9 @@ Il database prevede la creazione di una singola collezione in cui ogni documento
 
 Tecnologie utilizzate:
 \begin{itemize}
-    \item \emph{HTML 5 e bootstrap}: realizzazione della struttura delle pagine e gestione degli stili con bootstrap;
+    \item \emph{HTML 5}: realizzazione della struttura delle pagine;
+    \item \emph{Bootstrap e CSS3}: gestione degli stili;
+    \item \emph{Swiper API}: realizzazione degli swiper presenti all'interno delle pagine;
     \item \emph{JavaScript}: realizzazione delle richiese al server e alle API, nonché del toggle della darkmode e l'aggiornamento
           di frammenti di pagina con dati ricevuti dal server;
     \item \emph{Node JS}: implementazione del server con tutte le sue funzionalità (caricamento di tutte le pagine,
@@ -55,7 +93,7 @@ Tecnologie utilizzate:
           aree geografiche);
     \item \emph{Express}: framework utilizzato per semplificare il deploy del server;
     \item \emph{JSON}: formato usato per la trasmissione dei dati;
-    \item \emph{localStorage}: usato per il salvataggio della preferenza utente per la visualizzazione della pagina (dark o light mode)
+    \item \emph{localStorage}: usato per il salvataggio della preferenza utente per la visualizzazione della pagina (dark o light mode);
     \item \emph{MongoDB}: database utilizzato per salvare le informazioni relative agli utenti registrati sull'app;
     \item \emph{API}: nel progetto sono state utilizzate 4 API:
           \begin{itemize}

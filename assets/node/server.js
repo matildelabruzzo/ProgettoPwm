@@ -146,12 +146,11 @@ app.post("/aggiornaDati", (req, res) => {
     let utente = req.cookies.login;
     let nuoviDati;
 
-
     if (utente === undefined)
         res.redirect("/");
 
     if (req.body.pw !== undefined)
-        nuoviDati = { pw: req.body.pw };
+        nuoviDati = { pwd: req.body.pw };
     else if (req.body.mail !== undefined)
         nuoviDati = { email: req.body.mail };
     else {
@@ -236,7 +235,6 @@ app.put("/rimuoviCit", (req, res) => {
 
     if (utente === undefined)
         res.redirect("/");
-
 
     mc.connect(function (err, db) {
         if (err) throw err;

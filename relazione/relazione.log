@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.4)  4 SEP 2022 19:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.4)  7 SEP 2022 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -359,42 +359,97 @@ Capitolo 1.
 [2
 
 
-]) [3]
+] [3]) [4]
 \openout2 = `capitoli/interfacce.aux'.
 
  (capitoli/interfacce.tex
 Capitolo 2.
-) [4
+<img/indexSopra.png, id=171, 2229.83063pt x 1108.8928pt>
+File: img/indexSopra.png Graphic file (type png)
+<use img/indexSopra.png>
+Package pdftex.def Info: img/indexSopra.png  used on input line 11.
+(pdftex.def)             Requested size: 2229.82521pt x 1108.8901pt.
+[5
 
 
 
 
-]
+ <./img/indexSopra.png>]
+<img/indexLogged.png, id=179, 2183.90906pt x 924.45375pt>
+File: img/indexLogged.png Graphic file (type png)
+<use img/indexLogged.png>
+Package pdftex.def Info: img/indexLogged.png  used on input line 29.
+(pdftex.def)             Requested size: 2183.90376pt x 924.45149pt.
+<img/swiperFooter.png, id=180, 2258.4375pt x 1065.22969pt>
+File: img/swiperFooter.png Graphic file (type png)
+<use img/swiperFooter.png>
+Package pdftex.def Info: img/swiperFooter.png  used on input line 39.
+(pdftex.def)             Requested size: 2258.432pt x 1065.2271pt.
+ [6 <./img/indexLogged.png> <./img/swiperFooter.png>] [7]
+<img/login.png, id=194, 2258.4375pt x 988.44281pt>
+File: img/login.png Graphic file (type png)
+<use img/login.png>
+Package pdftex.def Info: img/login.png  used on input line 61.
+(pdftex.def)             Requested size: 2258.432pt x 988.4404pt.
+ [8 <./img/login.png>]
+<img/registrazione.png, id=201, 2258.4375pt x 1021.56656pt>
+File: img/registrazione.png Graphic file (type png)
+<use img/registrazione.png>
+Package pdftex.def Info: img/registrazione.png  used on input line 75.
+(pdftex.def)             Requested size: 2258.432pt x 1021.56407pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+[9 <./img/registrazione.png>]
+<img/areaPSopra.png, id=208, 2207.99907pt x 1189.44376pt>
+File: img/areaPSopra.png Graphic file (type png)
+<use img/areaPSopra.png>
+Package pdftex.def Info: img/areaPSopra.png  used on input line 96.
+(pdftex.def)             Requested size: 2207.99371pt x 1189.44086pt.
+ [10 <./img/areaPSopra.png>]
+<img/areaPSotto.png, id=215, 2139.49312pt x 1139.75812pt>
+File: img/areaPSotto.png Graphic file (type png)
+<use img/areaPSotto.png>
+Package pdftex.def Info: img/areaPSotto.png  used on input line 110.
+(pdftex.def)             Requested size: 2139.48793pt x 1139.75534pt.
+) [11 <./img/areaPSotto.png>]
 \openout2 = `capitoli/architettura.aux'.
 
  (capitoli/architettura.tex
 Capitolo 3.
-) [5
+<img/architettura.png, id=222, 1892.57062pt x 820.56563pt>
+File: img/architettura.png Graphic file (type png)
+<use img/architettura.png>
+Package pdftex.def Info: img/architettura.png  used on input line 7.
+(pdftex.def)             Requested size: 1892.56602pt x 820.56363pt.
+[12
 
 
 
 
-]
+ <./img/architettura.png>]) [13]
 \openout2 = `capitoli/codice.aux'.
 
  (capitoli/codice.tex
 Capitolo 4.
-) [6
+[14
 
 
 
 
-]
+]) [15]
 \openout2 = `capitoli/sviluppi.aux'.
 
  (capitoli/sviluppi.tex
 Capitolo 5.
-) [7
+) [16
 
 
 
@@ -404,27 +459,27 @@ Capitolo 5.
 
  (capitoli/bibliografia.tex
 Capitolo 6.
-) [8
+) [17
 
 
 
 
 ] (relazione.aux (capitoli/introduzione.aux) (capitoli/interfacce.aux) (capitoli/architettura.aux) (capitoli/codice.aux) (capitoli/sviluppi.aux) (capitoli/bibliografia.aux))
 Package rerunfilecheck Info: File `relazione.out' has not changed.
-(rerunfilecheck)             Checksum: 99F6E34D2603FACE80F6DEDC52096AD1;1394.
+(rerunfilecheck)             Checksum: 8589805DBBB3FE3FED35D3FD22FF3D4C;3553.
  ) 
 Here is how much of TeX's memory you used:
- 11991 strings out of 477843
- 195980 string characters out of 2823600
- 521172 words of memory out of 3000000
- 30719 multiletter control sequences out of 15000+600000
+ 12104 strings out of 477843
+ 197884 string characters out of 2823600
+ 523199 words of memory out of 3000000
+ 30784 multiletter control sequences out of 15000+600000
  475407 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,77p,399b,510s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,7n,77p,399b,562s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\matil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on relazione.pdf (9 pages, 118687 bytes).
+Output written on relazione.pdf (18 pages, 10016482 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 22 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 265 words of extra memory for PDF output out of 10000 (max. 10000000)
 
