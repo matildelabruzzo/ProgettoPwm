@@ -40,18 +40,27 @@ suggerendo all'utente di accedervi per poter visualizzare correttamente tutti i 
     \caption{Swiper con citazioni e footer}
 \end{figure}
 
-Oltre l'area dedicata alle città preferite, invece, troviamo uno slider ottenuto con \emph{Swiper API} in cui, scorrendo, si possono leggere alcune citazioni famose sul meteo.
+Oltre l'area dedicata alle città preferite, invece, troviamo uno slider ottenuto con \emph{Swiper API} in cui, scorrendo, si possono leggere alcune citazioni e aforismi sul meteo.
 
 \vspace{5mm}
 
-In fondo ad ogni pagina dell'applicazione troviamo un footer con le informazioni di riepilogo e i riferimenti alle pagine del sito web, così come la possibilità di inserire la propria email per
+Infine, in fondo ad ogni pagina dell'applicazione troviamo un footer con le informazioni di riepilogo e i riferimenti alle pagine del sito web, così come la possibilità di inserire la propria email per
 rimanere aggiornato.
 
-\newpage
 \section{Aree}
 
 \subsection{Area.ejs}
 
+\begin{figure}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{\includegraphics{img/area.png}}
+    \caption{Pagina dedicata alle diverse aree geografiche}
+\end{figure}
+
+In questa pagina si trovano le informazioni metereologiche relative alle capitali delle diverse aree geografiche. La struttura della pagina, costituita da uno swiper a griglia oltre alla navbar semplificata e il footer, è uguale
+per tutti i continenti; infatti, quando viene selezionata l'area, ciò che cambia sono i dati delle città che vengono mostrate.
+
+\newpage
 \section{Login e Registrazione}
 
 \subsection{Login.ejs}
@@ -64,10 +73,9 @@ rimanere aggiornato.
 
 Grazie a questa pagina è possibile effettuare il login nel caso si sia già registrati oppure di registrarsi attravero l'apposito
 link al di sotto del form con le credenziali.\\
-La navbar è semplificata in modo da rendere l'interfaccia meno dispersiva e permette unicamente di tornare alla home, gestire
-la modalità di visualizzazione della pagina oppure cercare una città.
+La navbar è semplificata in modo da rendere l'interfaccia meno dispersiva e permette unicamente di tornare alla home e gestire
+la modalità di visualizzazione della pagina.
 
-\newpage
 \subsection{Registrazione.ejs}
 
 \begin{figure}[ht]
@@ -88,7 +96,6 @@ Se necessario, è possibile passare alla pagina di login tramite il link in bass
 
 La navbar è semplificata nella stessa maniera della pagina di login.
 
-\newpage
 \subsection{AreaPersonale.ejs}
 
 \begin{figure}[ht]
@@ -97,11 +104,11 @@ La navbar è semplificata nella stessa maniera della pagina di login.
     \caption{Metà superiore della pagina dedicata all'area personale}
 \end{figure}
 
-Nella metà superiore della pagina troviamo una navbar analoga a quella presente nell'index a seguito del login.
+Nella metà superiore della pagina troviamo una navbar analoga a quella presente nell'index a seguito del login, a eccezione della barra di ricerca.
 
 \vspace{5mm}
 
-Al di sotto di essa, abbiamo i dati relativi all'utente (username e email. la password non viene mostrata per ragioni di
+Al di sotto di essa, abbiamo i dati relativi all'utente (username e email. La password non viene mostrata per ragioni di
 sicurezza) e l'elenco delle città salvate tra i preferiti, se presenti.
 
 \newpage
@@ -114,8 +121,8 @@ sicurezza) e l'elenco delle città salvate tra i preferiti, se presenti.
 A seguito di queste informazioni, troviamo una serie di form che permettono, attraverso chiamate asincrone al server, di modificare
 i dati relativi all'utente, quali:
 \begin{itemize}
-    \item username
-    \item email
-    \item password
+    \item username;
+    \item email;
+    \item password;
     \item città salvate tra i preferiti
 \end{itemize}

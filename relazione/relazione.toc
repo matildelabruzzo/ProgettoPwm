@@ -8,23 +8,23 @@
 \contentsline {subsection}{\numberline {1.1.4}Aspetti tecnologici}{3}{subsection.1.1.4}%
 \contentsline {chapter}{\numberline {2}Interfacce}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Index.ejs}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Aree}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Area.ejs}{8}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.2}Aree}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Area.ejs}{7}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}Login e Registrazione}{8}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Login.ejs}{8}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Registrazione.ejs}{9}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}AreaPersonale.ejs}{10}{subsection.2.3.3}%
-\contentsline {chapter}{\numberline {3}Architettura}{12}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Struttura del sito}{12}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Routing lato server}{12}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Descrizione delle risorse}{13}{subsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.1}Database}{13}{subsubsection.3.2.1.1}%
-\contentsline {subsubsection}{\numberline {3.2.1.2}Autenticazione}{13}{subsubsection.3.2.1.2}%
-\contentsline {chapter}{\numberline {4}Codice}{14}{chapter.4}%
-\contentsline {section}{\numberline {4.1}HTML 5}{14}{section.4.1}%
-\contentsline {section}{\numberline {4.2}CSS3}{14}{section.4.2}%
-\contentsline {section}{\numberline {4.3}API}{14}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Node.js}{15}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Librerie esterne e JavaScript}{15}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Possibili sviluppi e conclusioni}{16}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Bibliografia}{17}{chapter.6}%
+\contentsline {subsection}{\numberline {2.3.2}Registrazione.ejs}{8}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}AreaPersonale.ejs}{9}{subsection.2.3.3}%
+\contentsline {chapter}{\numberline {3}Architettura}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Struttura del sito}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Routing lato server}{11}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Descrizione delle risorse}{12}{subsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Database}{12}{subsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}Autenticazione}{12}{subsubsection.3.2.1.2}%
+\contentsline {chapter}{\numberline {4}Codice}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}HTML 5}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}CSS3}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}API}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Node.js}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Librerie esterne e JavaScript}{14}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Possibili sviluppi e conclusioni}{15}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Bibliografia}{16}{chapter.6}%

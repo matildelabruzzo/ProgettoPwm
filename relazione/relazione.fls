@@ -578,8 +578,8 @@ INPUT C:\Users\matil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tf
 INPUT C:\Users\matil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\matil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\matil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\matil\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT C:\Users\matil\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT C:\Users\matil\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
 INPUT .\capitoli\interfacce.tex
 OUTPUT capitoli\interfacce.aux
 INPUT .\capitoli\interfacce.tex
@@ -610,6 +610,13 @@ INPUT .\img\swiperFooter.png
 INPUT .\img\swiperFooter.png
 INPUT .\img\swiperFooter.png
 INPUT .\img\swiperFooter.png
+INPUT .\img\area.png
+INPUT .\img\area.png
+INPUT img\area.png
+INPUT .\img\area.png
+INPUT .\img\area.png
+INPUT .\img\area.png
+INPUT .\img\area.png
 INPUT .\img\login.png
 INPUT .\img\login.png
 INPUT img\login.png

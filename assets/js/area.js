@@ -1,23 +1,7 @@
-/*
-                                <div class="swiper-slide">
-                                    <img id="imgSlider<%= i%>">
-                                    <div class="slide-info">
-                                        <h3 id="cit<%= i%>">
-                                            <%= pref[i]%>
-                                        </h3>
-                                        <ul class="list-unstyled">
-                                            <li id="cit<%= i%>Temp"></li>
-                                            <li id="cit<%= i%>TempPerc"></li>
-                                            <li id="cit<%= i%>Humid"></li>
-                                            <li id="cit<%= i%>Weather"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-*/
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 5,
     grid: {
-        rows: 3,
+        rows: 2,
     },
     spaceBetween: 30,
     pagination: {
