@@ -121,10 +121,6 @@ html {
 
 /*#endregion*/
 
-.icon-rounded img {
-    width: 15%;
-}
-
 /*#region Swiper */
 .swiper {
     width: 100%;
