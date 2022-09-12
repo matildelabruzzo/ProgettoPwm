@@ -107,6 +107,13 @@ html {
     top: 50px;
 }
 
+.weather-description {
+    font-size: 18px;
+    position: absolute;
+    top: 150px;
+    left: 130px;
+}
+
 .weather-suggestion {
     position: absolute;
     text-align: right;

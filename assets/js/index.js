@@ -24,6 +24,7 @@ function weatherData(data) {
     const weatherImage = document.querySelector('.weather-image');
     const weatherLocation = document.querySelector('.weather-location');
     const weatherTemperature = document.querySelector('.weather-temperature');
+    const weatherDescription = document.querySelector('.weather-description');
     const suggestionParagraph = document.querySelector('.suggestion');
 
     const locationName = data.name;
@@ -35,7 +36,7 @@ function weatherData(data) {
 
     weatherLocation.innerText = locationName;
     weatherTemperature.innerText = temperature + '°';
-    weatherImage.alt = description;
+    weatherDescription.innerText = description;
     weatherImage.src = `images/${imageCode}.jpg`;
     suggestionParagraph.innerText = suggestion;
 }
