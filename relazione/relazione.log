@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.4)  9 SEP 2022 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.9.4)  13 SEP 2022 16:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -378,50 +378,50 @@ Package pdftex.def Info: img/indexSopra.png  used on input line 11.
 <img/indexLogged.png, id=179, 2183.90906pt x 924.45375pt>
 File: img/indexLogged.png Graphic file (type png)
 <use img/indexLogged.png>
-Package pdftex.def Info: img/indexLogged.png  used on input line 29.
+Package pdftex.def Info: img/indexLogged.png  used on input line 35.
 (pdftex.def)             Requested size: 2183.90376pt x 924.45149pt.
 <img/swiperFooter.png, id=180, 2258.4375pt x 1065.22969pt>
 File: img/swiperFooter.png Graphic file (type png)
 <use img/swiperFooter.png>
-Package pdftex.def Info: img/swiperFooter.png  used on input line 39.
+Package pdftex.def Info: img/swiperFooter.png  used on input line 43.
 (pdftex.def)             Requested size: 2258.432pt x 1065.2271pt.
  [6 <./img/indexLogged.png> <./img/swiperFooter.png>]
 <img/area.png, id=190, 2171.11125pt x 1127.71312pt>
 File: img/area.png Graphic file (type png)
 <use img/area.png>
-Package pdftex.def Info: img/area.png  used on input line 56.
+Package pdftex.def Info: img/area.png  used on input line 58.
 (pdftex.def)             Requested size: 2171.10597pt x 1127.71037pt.
  [7 <./img/area.png>]
 <img/login.png, id=197, 2258.4375pt x 988.44281pt>
 File: img/login.png Graphic file (type png)
 <use img/login.png>
-Package pdftex.def Info: img/login.png  used on input line 70.
+Package pdftex.def Info: img/login.png  used on input line 72.
 (pdftex.def)             Requested size: 2258.432pt x 988.4404pt.
 <img/registrazione.png, id=198, 2258.4375pt x 1021.56656pt>
 File: img/registrazione.png Graphic file (type png)
 <use img/registrazione.png>
-Package pdftex.def Info: img/registrazione.png  used on input line 83.
+Package pdftex.def Info: img/registrazione.png  used on input line 85.
 (pdftex.def)             Requested size: 2258.432pt x 1021.56407pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--90
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
 [8 <./img/login.png> <./img/registrazione.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 <img/areaPSopra.png, id=207, 2207.99907pt x 1189.44376pt>
 File: img/areaPSopra.png Graphic file (type png)
 <use img/areaPSopra.png>
-Package pdftex.def Info: img/areaPSopra.png  used on input line 103.
+Package pdftex.def Info: img/areaPSopra.png  used on input line 105.
 (pdftex.def)             Requested size: 2207.99371pt x 1189.44086pt.
 [9 <./img/areaPSopra.png>]
 <img/areaPSotto.png, id=214, 2139.49312pt x 1139.75812pt>
 File: img/areaPSotto.png Graphic file (type png)
 <use img/areaPSotto.png>
-Package pdftex.def Info: img/areaPSotto.png  used on input line 117.
+Package pdftex.def Info: img/areaPSotto.png  used on input line 119.
 (pdftex.def)             Requested size: 2139.48793pt x 1139.75534pt.
 ) [10 <./img/areaPSotto.png>]
 \openout2 = `capitoli/architettura.aux'.
@@ -479,9 +479,9 @@ Here is how much of TeX's memory you used:
  30790 multiletter control sequences out of 15000+600000
  475407 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,77p,410b,562s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,7n,77p,410b,572s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\matil\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/matil/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on relazione.pdf (17 pages, 16064778 bytes).
+Output written on relazione.pdf (17 pages, 16064586 bytes).
 PDF statistics:
  316 PDF objects out of 1000 (max. 8388607)
  61 named destinations out of 1000 (max. 500000)

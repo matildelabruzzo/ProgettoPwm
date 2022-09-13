@@ -6,7 +6,6 @@ const MongoClient = require('mongodb').MongoClient;
 const cookie = require('cookie-parser');
 const { send } = require('process');
 const axios = require("axios");
-const fs = require("fs");
 const { config } = require('dotenv');
 //#endregion
 

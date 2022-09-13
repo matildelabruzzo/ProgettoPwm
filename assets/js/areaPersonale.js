@@ -11,7 +11,7 @@ document.getElementById("emailForm").addEventListener('submit', async (e) => {
     let mail = document.getElementById("mail").value;
     let bodyReq = JSON.stringify({ mail: mail });
 
-    inviaNuoviDati(bodyReq, "responseEmail", "containerEmail", "email aggiornata correttamente!", "errore. Email non aggiornata", "pEmail", mail);
+    inviaNuoviDati(bodyReq, "responseEmail", "containerEmail", "Email aggiornata correttamente!", "Errore: email non aggiornata", "pEmail", mail);
 });
 
 document.getElementById("pwForm").addEventListener('submit', async (e) => {
@@ -19,7 +19,7 @@ document.getElementById("pwForm").addEventListener('submit', async (e) => {
     let pw = CryptoJS.SHA256(document.getElementById("pw").value).toString();
     let bodyReq = JSON.stringify({ pw: pw });
 
-    inviaNuoviDati(bodyReq, "responsePw", "containerPw", "password aggiornata correttamente!", "errore. Password non aggiornata");
+    inviaNuoviDati(bodyReq, "responsePw", "containerPw", "Password aggiornata correttamente!", "Errore: password non aggiornata");
 });
 
 document.getElementById("prefForm").addEventListener('submit', async (e) => {
@@ -51,7 +51,7 @@ document.getElementById("prefForm").addEventListener('submit', async (e) => {
     p = document.createElement("p");
     if (await resp.result == "ok") {
         p.classList.add("text-success");
-        p.innerText = "città aggiornata correttamente ai preferiti!";
+        p.innerText = "Città aggiornata correttamente ai preferiti!";
 
         div.appendChild(p);
         document.getElementById("containerPw").appendChild(div);
@@ -78,7 +78,7 @@ document.getElementById("prefForm").addEventListener('submit', async (e) => {
         document.getElementById("divPref").appendChild(divRow);
     } else {
         p.classList.add("text-danger");
-        p.innerText = "errore, preferiti non aggiornati";
+        p.innerText = "Errore: preferiti non aggiornati";
     }
 
     div.appendChild(p);
@@ -109,7 +109,7 @@ function aggiungiRimozione() {
                 document.getElementById("divPref").removeChild(document.getElementById("divPref").childNodes[i]);
                 document.getElementById("divPref").removeChild(document.getElementById("divPref").childNodes[i]);
             } else {
-                alert("si è verificato un errore. impossibile rimuovere la città dai preferiti");
+                alert("Si è verificato un errore: impossibile rimuovere la città dai preferiti");
             }
         });
     });

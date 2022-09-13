@@ -4,9 +4,9 @@ currentCity();
 citPreferite();
 
 async function citPreferite() {
-    if (document.getElementsByClassName("swiper-slide").length != 0) {
+    if (document.getElementsByClassName("preferito").length > 0) {
 
-        for (let i = 0; i < document.getElementsByClassName("swiper-slide").length; i++) {
+        for (let i = 0; i < document.getElementsByClassName("preferito").length; i++) {
             let { lat, lon } = await getCityCoord(document.getElementById("cit" + i).innerText);
             let weather = await getCityWeather(lat, lon);
             getImg(document.getElementById("cit" + i).innerText, "imgSlider" + i, Math.floor(Math.random() * 15));
@@ -24,19 +24,16 @@ function weatherData(data) {
     const weatherImage = document.querySelector('.weather-image');
     const weatherLocation = document.querySelector('.weather-location');
     const weatherTemperature = document.querySelector('.weather-temperature');
-    const weatherDescription = document.querySelector('.weather-description');
     const suggestionParagraph = document.querySelector('.suggestion');
 
     const locationName = data.name;
     const temperature = Math.floor(data.main.temp); // arrotondo per difetto
     const imageCode = data.weather[0].icon;
-    const description = data.weather[0].description;
 
     const suggestion = getSuggestion(imageCode);
 
     weatherLocation.innerText = locationName;
     weatherTemperature.innerText = temperature + '°';
-    weatherDescription.innerText = description;
     weatherImage.src = `images/${imageCode}.jpg`;
     suggestionParagraph.innerText = suggestion;
 }
